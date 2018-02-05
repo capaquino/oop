@@ -12,14 +12,14 @@ public:
     // Default
     String() {}
 
-    // Literal
+    // Literal, can't remember from thurs if this was inherently broken
     String(const char *s)
     : _len(std::strlen(s)), _str(new char[_len])
     {
         std::strcpy(_str, s);
     }
 
-    // Copy
+    // Copy, see Literal
     String(const String& s)
     : _len(s._len), _str(new char[_len])
     {
@@ -37,6 +37,15 @@ public:
         _len = std::strlen(s);
         _str = new char[_len];
         std::strcpy(_str, s);
+        return *this;
+    }
+
+    String& operator=(const String &s)
+    {
+        delete[] _str;
+        _len = std::strlen(s._str);
+        _str = new char[_len];
+        std::strcpy(_str, s._str);
         return *this;
     }
 
