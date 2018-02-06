@@ -9,44 +9,41 @@ private:
     char* _str;
 
 public:
-    // Default
     String() {}
 
-    // Literal, can't remember from thurs if this was inherently broken
-    String(const char *s)
-    : _len(std::strlen(s)), _str(new char[_len])
+    String(const char* s)
+    : _len(std::strlen(s)), _str(new char[_len+1])
     {
-        std::strcpy(_str, s);
+        std::strncpy(_str, s, _len);
     }
 
-    // Copy, see Literal
     String(const String& s)
-    : _len(s._len), _str(new char[_len])
+    : _len(s._len), _str(new char[_len+1])
     {
-        std::strcpy(_str, s._str);
-    }
-
-    ~String()
-    {
-        delete[] _str;
+        std::strncpy(_str, s._str, _len);
     }
 
     String& operator=(const char* s)
     {
         delete[] _str;
         _len = std::strlen(s);
-        _str = new char[_len];
-        std::strcpy(_str, s);
+        _str = new char[_len+1];
+        std::strncpy(_str, s, _len);
         return *this;
     }
 
     String& operator=(const String &s)
     {
         delete[] _str;
-        _len = std::strlen(s._str);
-        _str = new char[_len];
-        std::strcpy(_str, s._str);
+        _len = s._len+1; // or std::strlen(s._str);
+        _str = new char[_len+1];
+        std::strncpy(_str, s._str, _len);
         return *this;
+    }
+
+    ~String()
+    {
+        delete[] _str;
     }
 
     bool operator==(const String &s)
