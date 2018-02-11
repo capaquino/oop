@@ -1,3 +1,4 @@
 .localized
 .DS_store
 build/
+*.o
