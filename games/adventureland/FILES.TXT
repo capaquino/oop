@@ -1,0 +1,33 @@
+The files in this archive:
+
+        (C)      TXT       Copyright notice, read this first
+        WHATS    NEW       Notes changes from first archive.
+        ADAMS    TXT       Information about Scott Adams and his games
+        ADVEN1   BAS       An ABASIC/GW-BASIC version of Scott Adams'
+                           Adventureland (original)
+        ADVEN1   TXT       Information about this version of Adventureland
+        ADVLAND  SOL       A complete walk-through of Adventureland with map
+        ADVEN1_Q BAS       A QBASIC playable version of ADVEN1.BAS
+        FILES    TXT       This text
+        HINT1    BAS       Hint #1, run this as an ordinary BASIC program
+        HINT2    BAS       Hint #2, run this as an ordinary BASIC program 
+        HINT3    BAS       Hint #3, run this as an ordinary BASIC program
+
+        ADVLAND  C         A port of ADVEN1.BAS to C
+        ADVLAND  H         Part of ADVLAND.C
+        ADVLAND  EXE       Precompiled version of ADVLAND.C
+        NOTES    TXT       Notes on the port
+
+        DISSECT  C         A quick-and-dirty code snooper for Adventureland
+                           codes
+        DISSECT  EXE       Precompiled version of DISSECT.C
+        ACTION   TXT       The result file from DISSECT.EXE
+        CODES    TXT       What the codes in Adventureland means
+        OML      TXT       Object, Messages and Location numbers with text
+        
+
+Enjoy,
+
+Morten
+
+Internet: EDB_MORTEN@DEBET.NHH.NO

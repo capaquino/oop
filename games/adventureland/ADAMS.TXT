@@ -1,0 +1,156 @@
+Scott Adams was working as an advanced computer programmer at the 
+Florida Institute of Technology in Florida, when he was introduced to
+Crowther and Woods's original ADVENTURE by a friend. It was running on
+the company mainframe, a DEC PDP-10, and after ten days he had solved
+the game.
+
+Adams had just bought a Radio Shack TRS-80, and he wanted to be able 
+to play adventures on this small home computer as well. He got the idea of 
+producing an interpreter, which would allow him to write many different 
+adventures, but at the same time cram a lot of information into a very small 
+area of memory.
+
+His first adventure was Adventureland, which was written in Basic and 
+featured a split screen showing locations, objects and exits at the top,
+with the player's instructions and computer replies scrolling independently 
+underneath. On the advice of Lance Micklus he translated Adventureland 
+into machine language, having been persuaded that people were concerned 
+about speed.
+
+Adventureland was released commercially through "The Software 
+Exchange" of Milford, New Hampshire and "Creative Computing Software" 
+in 1978. The program was written on a Radio Shack TRS-80 level II.
+
+The project nearly died in the making, when Mrs. Adams got enough of her 
+husband being locked in a room for six months writing programs. She put 
+the disk in the stove - luckily for Scott, and a grateful world, the stove
+was not switched on. The quarrel was solved elegantly: Mrs. Adams wrote the 
+next adventure, "Pirate adventure".
+
+Adams went on to found Adventure International in 1979, which first
+twelve adventure games was:
+
+"Adventureland"
+This is the one that started it all. Set in a swampy forest near a sunny 
+meadow, the scene soon moves underground to royal chambers and a 
+chasm. Can you think of uses for an empty wine bladder and evil smelling 
+mud? The large dragon sleeping peacefully in the meadow begs a good 
+hard kick - is he really as harmless as it seems? Is it possible to get past
+the thin bear and still collect the thirteen treasures to complete the game? 
+Some devious thinking is needed to solve this - but it has been enjoyed by 
+many beginners and experienced players alike. 29 locations.
+
+"Pirate's Cove"
+A strong theme runs through this game where you will come across bottles 
+of rum, old chests, an anchor and an extremely greedy and loquacious 
+parrot. The story begins in the player's London flat, and after some chilling 
+discoveries, moves to Pirate's Island. Easier than Adventureland, this one 
+has a keener sense of humour, and reaches a climax with a gigantic hoax. If 
+you can't take a joke, be prepared to put your fist through your screen 
+when you get there. Written by Mrs. Adams, 25 locations and only two 
+treasures.
+
+"Mission Impossible"
+This one is different, set in an automated power plant where a saboteur is 
+loose with a bomb. A tape recorded message tells you, Mr. Pelps, that your 
+mission, should you decide to accept it, is to prevent the bomb from 
+detonating. Rather a drab game as far as descriptive content is concerned, 
+and quite a difficult one. Breakthroughs seem to come rarely after long 
+periods of frustration, and it is a game that lends itself to "stop-start" 
+playing.
+
+"Voodoo Castle"
+This is set in a dark castle with 24 rooms, and it leads on naturally to "The 
+Count".
+
+"The Count"
+Dracula, in this case - although the adventure only has 19 locations, "things 
+change" throughout the game, as night succeeds day.
+
+"Strange Odyssey"
+This is set in space, on a damaged spaceship, crash-landed on an alien 
+planet. The Adventurer must collect treasures of alien civilizations - if he 
+can successfully manipulate the controls of a strange travelling device. Can 
+you mend your crippled ship, climb slime trees, and tame a dia-ice hound? 
+This adventure has 22 locations, and only five treasures - but the last one 
+will prove extremely difficult to find.
+
+"Mystery Fun House"
+Successfully recreating the atmosphere of a fun-house on a computer, this 
+is a quest to find secret plans. Not an easy one, but so appealing and 
+intriguing, that it is always fun to come back in search of a solution. Has 
+some 37 locations, and is many people's favourite of the twelve.
+
+"Pyramid of Doom"
+Difficult in parts - notably at the beginning and the end, but easy enough in 
+the middle to give the novice some encouragement. Nervous tension is 
+created by the appearance of a small nomad, who proceeds to follow the 
+Adventurer around. There is humour in the throne room, and a counterfeit 
+object. If you can successfully avoid the rats and the mummy, you're well 
+on the way to success.
+
+"Ghost Town"
+This has all the feel of a deserted Western town, complete with Saloon, 
+Barbershop and Jail. Who is ringing the bell, can you ride a horse, and how 
+do you set about breaking in to a jail, are some of the problems you will 
+come up against. It has nearly 40 locations, and can be solved in more than 
+one way. It also has a couple of objects carried over from "Pyramid of 
+Doom". One of Scott's best.
+
+"Savage Island I & II"
+A two-part Adventure, the first is considered extremely difficult, and even 
+hardy Adventurers try not to mention part 2. Starting off on a deserted 
+beach, the chilling discovery of a large stone head in your likeness, lends
+to a feeling of unease. Soon forgotten in the exploration of a volcano, lake 
+and caves, pursued by and over-friendly bear. Beware the hurricane whilst 
+you struggle over the first hurdle - the bear. Part 1 is a good game, which 
+may take quite a few months to complete. Part 1 has to be solved before 
+the second - a password to the second is the goal of the first. As for Part 2 
+- it's breathtaking. These are the toughest of the Scott Adams adventures, 
+and not for the faint-hearted.
+
+"Golden Voyage"
+This is less difficult than "Savage Island I & II", and concerns your race to 
+bring back the elixir of youth for the king.
+
+After the twelve classic games Scott was involved in writing what was
+to be a series of four DC Comic based games. The first three of these,
+The Incredible Hulk, Spiderman, Torch & Thing were released and have
+a similar style to Scott's other games. Torch & Thing in particular used
+Scotts new improved game driver to allow you to switch between the two
+characters and had some truely rotten puzzles.
+
+Scott also revisited his original series to produce...
+
+"Return To Pirate Adventure"
+A quite nice sequel to the original pirate game.
+
+"Sorceror of Claymorgue Castle"
+A really sneaky little game where everything has many solutions and
+working out the right way to put everything together to solve the lot
+is really hard. It also has the worst pun I've ever come across in
+an adventure game. This one is my favourite Scott Adams game.
+
+ObFolklore:
+	The Dragon32 version of Claymorgue seems to be buggy and cannot
+be completed. 
+
+These adventures may appear, at first glance, to be just like all other
+programs around, but they were the first, and in fact, most other text
+adventures merely imitate the Scott Adams series.
+
+Scott Adams' story can be found in the December 1980 edition of BYTE.
+
+---------------------------------------------------------------------
+
+History of this file:
+
+	Morten Lohre (edb_morten@debet.nhh.no) wrote the short summary on
+	Scott Adams and the synopsis of the twelve classic games. The
+	text is based on information found in "Atari Adventures" by
+	Tony Bridge, published in London by Sunshine Books (1984) and
+	"The Computer & Video Games Book of Adventure" by Keith Campbell,
+	published by Melbourne House (1983).
+
+	Alan Cox (iiitac@pyr.swan.ac.uk) added information about what
+	happened after the twelve classics.

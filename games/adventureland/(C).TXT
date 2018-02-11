@@ -1,0 +1,8 @@
+As far as I know, Adventureland is free to copy and distribute. Neither the
+source nor the scarce documentation provided from PC-SIG states a copyright
+or mentions a fee to be paid. Under any circumstance, the means of
+distribution implies that one cannot distribute Adventureland for profit.
+
+If you want to distribute a reprogrammed or changed source, you must include
+the original source and documentation as distributed in this archive and
+document any changes made.

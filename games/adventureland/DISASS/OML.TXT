@@ -1,0 +1,163 @@
+Locations:
+(1)     dismal swamp.
+(2)     *I'm in the top of a tall cypress tree.
+(3)     large hollow damp stump in the swamp.
+(4)     root chamber under the stump.
+(5)     semi-dark hole by the root chamber.
+(6)     long down-sloping hall.
+(7)     large cavern.
+(8)     large 8-sided room.
+(9)     royal anteroom.
+(10)    *I'm on the shore of a lake.
+(11)    forest.
+(12)    maze of pits.
+(13)    maze of pits.
+(14)    maze of pits.
+(15)    maze of pits.
+(16)    maze of pits.
+(17)    maze of pits.
+(18)    bottom of a chasm.  Above 2 ledges.  One has a bricked up window.
+(19)    *I'm on a narrow ledge by a chasm.  Across the chasm is a throne room.
+(20)    royal chamber.
+(21)    *I'm on a narrow ledge by the throne room-across chasm-ledge.
+(22)    throne room.
+(23)    sunny meadow.
+(24)    *I think I'm in real trouble.  Here's a guy with a pitchfork!
+(25)    hidden grove.
+(26)    quick-sand bog.
+(27)    memory RAM of an IBM-PC.  I took a wrong turn!
+(28)    branch on the top of an old oak tree.                                           To the east I see a meadow beyond a lake.
+(29)     
+(30)     
+(31)     
+(32)     
+(33)    large misty room with strange letters over the exits.
+
+Messages:
+(1)     Nothing happens
+(2)     CHOP IT DOWN!
+(3)     Boy that really hit the spot!
+(4)     Dragon smells something - awakens - attacks me!
+(5)     Lock shatters.
+(6)     I can't.  It's locked.
+(7)     TIMBER...  Something fell from the treetop and vanished!
+(8)     TIMBER...
+(9)     Lamp is off
+(10)    Flameless lamp is on.
+(11)    I'm bit by a spider.
+(12)    My chigger bites are now infected.
+(13)    The bites have rotted my whole body.
+(14)    The bear eats the honey and falls asleep.
+(15)    Bees sting me
+(16)    I've no container.
+(17)    The bees all suffocated.
+(18)    Something I'm holding vibrated and...
+(19)    Nothing to light it with.
+(20)    Gas bladder blew up.
+(21)    in my hands!
+(22)    Gas needs to be contained before it will burn.
+(23)    Gas dissipates.
+(24)    That won't ignite.
+(25)    How?  Jump?
+(26)    The bear won't let me.
+(27)    Don't waste *HONEY*.  Get mad instead.  Dam lava!
+(28)    Bees madden the bear.  Bear then attacks me!
+(29)    It soaks into the ground.
+(30)    In one word tell me what.
+(31)    Oh no...Bear dodges...CRASH!
+(32)    It's heavy!
+(33)    Something's too heavy.  I fall.
+(34)    To stop game say -QUIT-
+(35)    The mirror hits the floor and shatters into a million pieces.
+(36)    Mirror lands softly on the rug - lights up and says:
+(37)    You lost *ALL* treasures.
+(38)    Not carrying the axe.  TAKE INVENTORY!
+(39)    It doesn't bother him at all.
+(40)    The mud dried up and fell off.
+(41)    The bear got startled and fell off the ledge!
+(42)    *DRAGON STINGS* and fades.  I don't get it - hope you do.
+(43)    The bees attack the dragon which gets up and flies away...
+(44)    Magic oil attracts magic lamp.  Lamp is now full.
+(45)    I'm bit by chiggers.
+(46)    There's something there all right!  Maybe I should go there?
+(47)    Maybe if I threw something?...
+(48)    Too dry.  Fish die.
+(49)    A glowing genie appears - drops something - then vanishes.
+(50)    A genie appears - says 'boy you're selfish' - takes something - then vanishes!
+(51)    NO!  It's too hot.
+(52)    Not here.
+(53)    Try the swamp
+(54)    Use one word.
+(55)    Try:  LOOK,JUMP,SWIM,CLIMB,THROW,FIND,GO,TAKE,INVENTORY,SCORE.
+(56)    Only 3 things will wake the dragon.  One of them is dangerous!
+(57)    If you need a hint on something, try 'HELP'.
+(58)    Read the sign in the meadow!
+(59)    You may need magic words here.
+(60)    A voice booms out ...
+(61)    PLEASE LEAVE IT ALONE!
+(62)    Can only throw axe.
+(63)    Medicine is good for bites.
+(64)    I don't know where it is.
+(65)    Treasures have an * in their name.  Say 'SCORE'
+(66)    Blow it up.
+(67)    Fish escape back to the lake.
+
+Objects:
+(1)     dark hole
+(2)     *POT OF RUBIES*/RUB/
+(3)     spider web with writing on it.
+(4)     Hollow stump and remains of a felled tree.
+(5)     cypress tree
+(6)     water
+(7)     evil smelling mud/MUD/
+(8)     *GOLDEN FISH*/FIS/
+(9)     lit brass lamp/LAM/
+(10)    old fashoned brass lamp/LAM/
+(11)    rusty axe (magic word- BUNYON -on it)/AXE/
+(12)    bottle of water/BOT/
+(13)    empty bottle/BOT/
+(14)    ring of skeleton keys/KEY/
+(15)    sign- LEAVE TREASURE HERE - (say 'SCORE')
+(16)    locked door
+(17)    open door with a hallway beyond
+(18)    swamp gas
+(19)    *GOLDEN NET*/NET/
+(20)    chigger bites
+(21)    infected chigger bites
+(22)    floating patch of oily slime
+(23)    *ROYAL HONEY*/HON/
+(24)    large african bees
+(25)    thin black bear
+(26)    bees in a bottle/BOT/
+(27)    large sleeping dragon
+(28)    flint and steel/FLI/
+(29)    *THICK PERSIAN RUG*/RUG/
+(30)    sign- MAGIC WORD IS AWAY. LOOK LA -(rest of sign is missing)
+(31)    distended gas bladder/BLA/
+(32)    bricked up window
+(33)    sign here says- IN SOME CASES MUD IS GOOD, IN OTHERS...
+(34)    stream of lava
+(35)    bricked up window with a hole in it.  Beyond is a ledge.
+(36)    loose fire bricks
+(37)    *GOLD CROWN*/CRO/
+(38)    *MAGIC MIRROR*
+(39)    sleeping bear
+(40)    empty wine bladder/BLA/
+(41)    broken glass
+(42)    chiggers/CHI/
+(43)    dead bear
+(44)    *DRAGON EGGS* (very rare)/EGG/
+(45)    lava stream with a brick dam
+(46)    *JEWELED FRUIT*/FRU/
+(47)    *SMALL STATUE OF A BLUE OX*/OX/
+(48)    *DIAMOND RING*/RIN/
+(49)    *DIAMOND BRACELET*/BRA/
+(50)    strange scratchings on rock reveals- ALADDIN WAS HERE -
+(51)    sign says- LIMBO.  FIND RIGHT EXIT AND LIVE AGAIN!
+(52)    smoking hole.  Pieces of dragon and gore.
+(53)    sign says- NO SWIMMING ALLOWED -
+(54)    arrow pointing down
+(55)    dead fish/FIS/
+(56)    *FIRESTONE* (cold now)/FIR/
+(57)    sign says- PAUL'S PLACE -
+(58)    trees

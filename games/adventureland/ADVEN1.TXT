@@ -1,0 +1,119 @@
+Adventureland
+by Scott Adams
+
+This BASIC adventure game was discovered by chance on disk #203 in the 
+PC-SIG Library. The disk is titled "Game Series No 14". On the disk the 
+game is referred to as "Adventure by Scott Adams". In the PC-SIG Library 
+Catalog 4th ed., 2nd printing (January 1988), the game is referred to as "a 
+version of the classic Adventure". The game titles itself "Adventure 1".
+
+A closer examination reveals that this is a version of Scott Adams's 
+"Adventureland". As you know, Adventureland was probably the first 
+adventure to be specifically written for a home micro, and was directly 
+inspired by the original ADVENTURE which Scott Adams had played in 
+its mainframe version.
+
+For more information on Scott Adams, Adventureland and other games by 
+Adventure International, see ADAMS.TXT which should be included in 
+this package.
+
+Apparently Scott Adams first wrote a BASIC version of Adventureland, 
+and then translated it to his own adventure language system written in 
+machine language. The included source must therefore be a copy of the
+BASIC version, translated to run on ABASIC/GW-BASIC (or similar) under
+MS-DOS.
+
+Seven lines in the original BASIC source has been changed by me. One is
+an outright bug and is an essential change to be able to complete the
+game. Four are for convenience, the sixth for nostalgia and the seventh
+for visuality. Both the original and changed lines appear below, to
+satisfy the purists. The '#' marks the change.
+
+1. To be able to complete the game, line 5010 has to be changed from
+        5010 DATA *SMALL STATUE OF A BLUE OX*/OXE/,26,*DIAMOND RING*/RIN/,0
+to
+        5010 DATA *SMALL STATUE OF A BLUE OX*/OX/,26,*DIAMOND RING*/RIN/,0
+                                                #
+This assures that the ox statue can be referred to as 'OX' in the game.
+Neither 'OX' nor 'OXE' works if the change is not made.
+
+2-5. To be able to save to harddisk, lines 370, 380, 1390 and 1410 are
+changed from
+        370 PRINT"Is previously saved game now on the disk in drive B:? ";:GOSUB 80:K$=IN$:PRINT K$:IF LEFT$(K$,1) <> "Y" THEN 350
+        380 OPEN "B:ADVEN-1.DAT" FOR INPUT AS 1
+        1390 PRINT "Is disk drive B: ready to receive the saved game? ";:GOSUB 80:K$=IN$:PRINT K$:IF LEFT$(K$,1)<>"Y" THEN 1440
+        1410 OPEN "B:ADVEN-1.DAT" FOR OUTPUT AS 1
+to
+        370 PRINT"Is previously saved game now on the disk in drive C:? ";:GOSUB 80:K$=IN$:PRINT K$:IF LEFT$(K$,1) <> "Y" THEN 350
+                                                                    #
+        380 OPEN "C:ADVEN-1.DAT" FOR INPUT AS 1
+                  #
+        1390 PRINT "Is disk drive C: ready to receive the saved game? ";:GOSUB 80:K$=IN$:PRINT K$:IF LEFT$(K$,1)<>"Y" THEN 1440
+                                  #
+        1410 OPEN "C:ADVEN-1.DAT" FOR OUTPUT AS 1
+                   #
+This is not necessary, but nice if you have a harddisk and do not want to
+save to floppies.
+
+6. In the original Adventureland, the sign in the hidden grove read
+'Paul's place'. I don't know if this gives any more meaning than just
+'s place', but personally I think the 'paul' part of the sentence is
+missing by accident. Anyway, line 5080 is changed from
+        5080 DATA "sign says- S PLACE -",25,"trees",11," ",0," ",0
+to
+        5080 DATA "sign says- PAUL'S PLACE -",25,"trees",11," ",0," ",0
+                              #####
+
+7. The adventure interpreter looks for a star in the beginning of a location
+description. If this star is present, it writes the description without the 
+"I'm in a" prefix. As you can see, this prefix is missing in line 4200.
+Change the line from
+        4200 DATA 0,0,0,0,0,0,"I'm on a narrow ledge by the throne room-across chasm-ledge."
+to
+        4200 DATA 0,0,0,0,0,0,"*I'm on a narrow ledge by the throne room-across chasm-ledge."
+                               #
+
+Otherwise ADVEN1.BAS is unchanged from the PC-SIG version.
+
+Three additional hint files named HINT1.DOC, HINT2.DOC and 
+HINT3.DOC were also included on the disk. These files were BASIC 
+source; I have cleaned them up ever so little and named them HINT1.BAS, 
+HINT2.BAS and HINT3.BAS. They can all be run as normal basic programs.
+
+The programming style in ADVEN1.BAS is totally awful, with lots of
+GOTO's within FOR-NEXT loops, which means that QBASIC reports errors
+upon a trial run of ADVEN1.BAS. I have made two minor quick-and-dirty
+modifications to ADVEN1.BAS and removed unnecessary line numbers. This
+new file is named ADVEN1_Q.BAS, and will, hopefully, run under QBASIC. I
+have successfully completed ADVEN1.BAS running on GW-BASIC 3.20 and
+ADVEN1_Q.BAS running on QBASIC 1.1.
+
+It should be fairly simple to convert the game to any dialect of
+BASIC. The source files included in this archive are all saved as
+ASCII-files for this purpose.
+
+And, do remember to use CAPITAL LETTERS when playing Adventureland.
+
+If you want information on PC-SIG or PC-SIG disks, you could try to 
+contact PC-SIG via its 1988 address or phone numbers:
+
+        PC-SIG, INC.
+        1030 E. Duane Avenue, Suite D
+        Sunnyvale, CA 94086
+        USA
+
+Orders:
+        (800) 245-6717 - USA (except California)
+        (800) 222-2996 - California only
+        (408) 730-2107 - FAX
+
+------------------------------------------------------------
+These comments by:
+
+Morten Lõhre
+Chateauet
+Sõre ùyjorden 36
+N 5035 BERGEN-SANDVIKEN
+NORWAY
+
+Internet: EDB_MORTEN@DEBET.NHH.NO

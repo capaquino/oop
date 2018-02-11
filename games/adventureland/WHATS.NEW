@@ -1,0 +1,11 @@
+*       ADVEN1.BAS is ported to C.
+*       A quick-and-dirty disassembler for the action codes is added.
+*       Information is added in the file "adams.txt". Thanks to
+        Alac Cox (iiitac@pyr.swan.ac.uk).
+*       The file "adven1.sol" is renamed "advland.sol" and contains a
+        shortened walktrought of the game. A complete map is added.
+*       A star is added in the dataset of the game to get correct
+        printout of ledge location. See "adven1.txt".
+
+Morten Lohre
+(edb_morten@debet.nhh.no)
