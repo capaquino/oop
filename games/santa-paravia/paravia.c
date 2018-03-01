@@ -29,7 +29,7 @@
 Copyright (C) 2000 Thomas Knox
 Portions Copyright (C) 1979 by George Blank, used with permission.
 This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License 
+modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2
 of the License, or (at your option) any later version.
 This program is distributed in the hope that it will be useful,
@@ -42,7 +42,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 Thomas Knox
 tknox@mac.com
 */
-/* Declare our standard C headers. */ 
+/* Declare our standard C headers. */
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
@@ -458,14 +458,14 @@ Me->LandPrice *= y;
 if(Me->LandPrice < 1.0) Me->LandPrice = 1.0;
 Me->GrainPrice = (int)(((6.0 - (float)Me->Harvest) * 3.0 + (float)Random(5)
             + (float)Random(5)) * 4.0 * y);
-Me->RatsAte = h; 
+Me->RatsAte = h;
 return;
 }
 void PrintGrain(player *Me)
 {
 switch(Me->Harvest)
 {
-    case 0: 
+    case 0:
 case 1: printf("Drought. Famine Threatens. "); break;
 case 2: printf("Bad Weather. Poor Harvest. "); break;
 case 3: printf("Normal Weather. Average Harvest. "); break;
@@ -635,7 +635,7 @@ if(HowMuch > Me->GrainReserve)
 {
     printf("You don't have it.\n");
 return;
-}   
+}
 Me->Treasury += (HowMuch * Me->GrainPrice / 1000);
 Me->GrainReserve -= HowMuch;
 return;
@@ -650,7 +650,7 @@ HowMuch = (int)atoi(string);
 if(HowMuch > (Me->Land - 5000))
 {
     printf("You can't sell that much\n");
-return; 
+return;
 }
 Me->Land -= HowMuch;
 Me->Treasury += (int)(((float)HowMuch * Me->LandPrice));
@@ -683,7 +683,7 @@ return;
 void PrintInstructions(void)
 {
     char string[256];
-    
+
     printf("Santa Paravia and Fiumaccio\n\n");
     printf("You are the ruler of a 15th century Italian city state.\n");
     printf("If you rule well, you will receive higher titles. The\n");
@@ -716,7 +716,7 @@ void PlayGame(player MyPlayers[6], int NumOfPlayers)
         for(i = 0; i < NumOfPlayers; i++)
             if(MyPlayers[i].IsDead == False)
                 NewTurn(&MyPlayers[i], NumOfPlayers, MyPlayers,
-                        &Baron); 
+                        &Baron);
         AllDead = True;
         for(i = 0; i < NumOfPlayers; i++)
             if(AllDead == True && MyPlayers[i].IsDead == False)
@@ -760,7 +760,7 @@ void NewTurn(player *Me, int HowMany, player MyPlayers[6], player *Baron)
     DrawMap(Me);
     StatePurchases(Me, HowMany, MyPlayers);
     CheckNewTitle(Me);
-    
+
     Me->Year++;
     if(Me->Year == Me->YearOfDeath)
         ImDead(Me);
@@ -851,12 +851,12 @@ GenerateIncome(Me);
                 Me->Justice = duty;
                 break;
         }
-    
+
     }
     AddRevenue(Me);
     if(Me->IsBankrupt == True)
     SeizeAssets(Me);
-}   
+}
 void DrawMap(player *Me)
 {
     /* Not implemented yet. */
@@ -916,10 +916,10 @@ void ImDead(player *Me)
 {
     char string[256];
     int why;
-    
+
     printf("\n\nVery sad news.\n%s %s has just died\n", Me->Title,
             Me->Name);
-    
+
     if(Me->Year > 1450)
         printf("of old age after a long reign.\n");
     else
