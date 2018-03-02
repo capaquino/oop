@@ -4,5 +4,5 @@
 
 class Grain : Resource
 {
-    // what do we need not included in resource?
+    //
 };

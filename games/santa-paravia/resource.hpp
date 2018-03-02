@@ -1,13 +1,17 @@
 #pragma once
 
+#include "Treasury.hpp"
+
 class Resource // should not be constructable at all, look up how to do that.
 {
 private:
-    unsigned int _amount;
-
+    unsigned _amount;
+    unsigned _price;
 public:
-    void Buy(unsigned int amt /* Treasury &t */); // modifies amount and player's gold, best way to access gold
-    void Sell(); // modifies amount and player's gold, how to access gold.
+    void Buy(unsigned amt, Treasury &t);
+    void Sell(unsigned amt, Treasury &t);
+    unsigned GetPrice();
 };
+// whats the best way to access gold?
 
 // also need to think about market prices and how they will fluctuate,
