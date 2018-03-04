@@ -1,12 +1,12 @@
 #include "rational.hpp"
-#include <numeric>
+#include <numeric> // std::gcd
 #include <iostream>
 #include <vector>
 
 void Rational::simplify()
 {
     // simplfy
-    int gcd = std::gcd(_num, _den);
+    int gcd = std::gcd(_num, _den); // c++17
     _num = _num/gcd;
     _den = _den/gcd;
 
