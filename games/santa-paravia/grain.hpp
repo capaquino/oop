@@ -4,5 +4,6 @@
 
 class Grain : Resource
 {
-    //
+public:
+    void ReleaseGrain(unsigned amount);
 };

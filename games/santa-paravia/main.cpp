@@ -4,6 +4,9 @@
 #include "title.hpp"
 
 int main(int argc, char const *argv[]) {
-    /* code */
+
+// Vector of Cities
+
+
     return 0;
 }
