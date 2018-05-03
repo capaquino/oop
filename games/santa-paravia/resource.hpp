@@ -5,9 +5,9 @@
 class Resource // should not be constructable at all, look up how to do that.
 {
 private:
-    unsigned _amount;
+    unsigned m_amount;
 public:
-    void Buy(unsigned amount, Treasury &t);
-    void Sell(unsigned amount, Treasury &t);
+    void Buy(unsigned amount);
+    void Sell(unsigned amount);
     unsigned GetPrice();
 };
