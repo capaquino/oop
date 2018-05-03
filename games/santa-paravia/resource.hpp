@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Treasury.hpp"
+#include "treasury.hpp"
 
 class Resource // should not be constructable at all, look up how to do that.
 {
@@ -9,5 +9,6 @@ private:
 public:
     void Buy(unsigned amount);
     void Sell(unsigned amount);
-    unsigned GetPrice();
+    unsigned price;
+    unsigned demand;
 };
