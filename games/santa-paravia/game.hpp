@@ -1,25 +1,49 @@
 #pragma once
 
+#include <string>
+#include <vector>
 
 #include "player.hpp"
-#include "city.hpp"
-#include <vector>
 
 class SantaParaviaGame
 {
 private:
+    // city names from original santa paravia
+    const std::vector<std::string> cityNames
+    {
+        "Santa Paravia",
+        "Fiumaccio",
+        "Torricella",
+        "Molinetto",
+        "Fontanile",
+        "Romanga",
+        "Monterana"
+    };
+
+    std::vector<Player> players;
 
 public:
-    SantaParaviaGame(char numberOfPlayers)
+    SantaParaviaGame(int numberOfPlayers, std::vector<std::string> playerNames)
     {
-        // Populate a cities vector
+        // Populate the game's cities vector
+        for (int i=0; i<numberOfPlayers; i++)
+        {
+            players.push_back(Player(playerNames.at(i), cityNames.at(i)));
+        }
+    }
 
-        // Populate a players vector
-        // Set players' city pointer to cities in city vector
-
-
-        // foreach &player : players
-        //     player.TakeTurn();
-
+    int Play()
+    {
+        while(true)
+        {
+            for (auto &player : players)
+            {
+                bool playerWon = player.TakeTurn();
+                if (playerWon)
+                {
+                    return &player - &players[0]; // returns the index
+                }
+            }
+        }
     }
 };

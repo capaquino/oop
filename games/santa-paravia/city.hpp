@@ -2,66 +2,42 @@
 
 #include <string>
 
+#include "members.hpp"
+
+// The player knows about the city, but the city does not know about the player.
+// Therefore, the city could be used by any "driver" game.
 class City
 {
 public:
+    std::string name;
+
+    // PublicWorks?
+
+    Building cathedral;
+    Building marketplace; // coupled with Revenue marketRevenue
+    Building mill; // coupled with Revenue millRevenue
+    Building palace;
+
+    People clergy;
+    People serfs; // dead serfs, fleeing serfs, new serfs, transplanted serfs
+    People merchants;
+    People nobles;
+    People soldiers; // solderPay
+
+    Revenue customsDuty; // x vs xRevenue?
+    Revenue incomeTax; // ^
+    Revenue justice; // ^, justice special case?
+    Revenue marketRevenue;
+    Revenue millRevenue;
+    Revenue salesTax; // ^
+
+    Resource grain; // harvest?
+    Resource land; // float landPrice
+
+    Events rats; // Rats, RatsAte difference?
+
     City(std::string n) : name(n)
     {
         // Init a city here
     }
-
-    std::string name;
-    // treasury
-    // building: cathedral, market, mill, palace. bool Purchased();
-    // resources: grain, land
-    // people: serfs, nobles, soldiers
 };
-
-
-// buildings
-// people
-
-/*
-Cathedral,
-Clergy,
-CustomsDuty,
-CustomsDutyRevenue,
-DeadSerfs;
-Difficulty,
-FleeingSerfs,
-GrainDemand,
-GrainPrice,
-GrainReserve;
-Harvest,
-IncomeTax,
-IncomeTaxRevenue,
-RatsAte;
-Justice,
-JusticeRevenue,
-Land,
-Marketplaces,
-MarketRevenue;
-Merchants,
-MillRevenue,
-Mills,
-NewSerfs,
-Nobles,
-OldTitle,
-Palace;
-Rats,
-SalesTax,
-SalesTaxRevenue,
-Serfs,
-SoldierPay,
-Soldiers,
-TitleNum;
-TransplantedSerfs,
-Treasury,
-WhichPlayer,
-Year,
-YearOfDeath
-
-char City[15], Name[25], Title[15];
-float PublicWorks, LandPrice;
-boolean InvadeMe, IsBankrupt, IsDead, IWon, MaleOrFemale, NewTitle;
-*/
