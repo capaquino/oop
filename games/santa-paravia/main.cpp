@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
 
         for (int i=0; i<number_of_players; i++)
         {
-            std::cout << "Player " << i << "'s name?\n> ";
+            std::cout << "Player " << i+1 << "'s name?\n> ";
             std::string playerNameInput;
             getline(std::cin, playerNameInput);
             playerNames.push_back(playerNameInput);

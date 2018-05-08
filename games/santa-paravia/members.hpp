@@ -2,27 +2,33 @@
 
 struct Resource // should not be constructable at all, look up how to do that.
 {
-    int amount;
+    int reserve;
     int demand;
     float price;
 };
 
 struct Revenue
 {
-    int amount;
+    int rate;
+    int incoming;
 };
 
 struct Building
 {
-    bool purchased;
+    int amount;
 };
 
 struct People
 {
-    int amount;
+    int population;
 };
 
 struct Events
 {
     void Occur() {}
+};
+
+struct Treasury
+{
+    int coffers;
 };
