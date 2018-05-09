@@ -18,6 +18,8 @@ private:
     int difficulty;
     bool won;
     bool invadeMe;
+    int year;
+    bool isDead;
 
 public:
     Player(std::string n, std::string cityName) : name(n), city(City(cityName))
@@ -28,6 +30,8 @@ public:
         difficulty = 1;
         won = true; // change this to false
         invadeMe = false;
+        year = -1;
+        isDead = false;
     }
 
     int random(int upperBound)
@@ -62,16 +66,49 @@ public:
         city.treasury.coffers -= 5000;
         city.publicWorks++;
     }
-    void BuyGrain(int amount) // different than original
+    //void BuyGrain(int amount) // different than original
+    void BuyGrain()
     {
+        char string[256];
+        int HowMuch;
+        printf("How much grain do you want to buy (0 to specify a total)? ");
+        fgets(string, 255, stdin);
+        HowMuch = static_cast<int>(atoi(string));
+        if(HowMuch == 0)
+        {
+            printf("How much total grain do you wish? ");
+            fgets(string, 255, stdin);
+            HowMuch = static_cast<int>(atoi(string));
+            HowMuch -= city.grain.reserve;
+            if(HowMuch < 0)
+            {
+                printf("Invalid total amount.\n\n");
+                return;
+            }
+        }
+
+        city.treasury.coffers -= (HowMuch * city.grain.price / 1000);
+        city.grain.reserve += HowMuch;
+        return;
         // original has UI stuff. Do that in Game class
-        city.grain.reserve += amount;
-        city.treasury.coffers -= city.grain.price * amount / 1000; // what's the 1000 for.
+        // city.grain.reserve += amount;
+        // city.treasury.coffers -= city.grain.price * amount / 1000; // what's the 1000 for.
     }
-    void BuyLand(int amount)
+
+    //void BuyLand(int amount) // different than original
+    void BuyLand()
     {
-        city.land.reserve += amount;
-        city.treasury.coffers -= city.land.price * amount;
+        char string[256];
+        int HowMuch;
+        printf("How much land do you want to buy? ");
+        fgets(string, 255, stdin);
+        HowMuch = static_cast<int>(atoi(string));
+        city.land.reserve += HowMuch;
+        city.treasury.coffers -= static_cast<int>(( static_cast<float>(HowMuch) * city.land.price));
+        return;
+        // original has UI stuff. Do that in Game class
+        // city.land.reserve += amount;
+        // city.treasury.coffers -= city.land.price * amount;
     }
     void BuyMarket()
     {
@@ -241,9 +278,19 @@ public:
         city.rats.amountEffected = h;
     }
 
-    int PrintGrain() // was void
+    void PrintGrain() // was void
     {
-        return city.harvest;
+        switch(city.harvest)
+        {
+            case 0:
+            case 1: printf("Drought. Famine Threatens. "); break;
+            case 2: printf("Bad Weather. Poor Harvest. "); break;
+            case 3: printf("Normal Weather. Average Harvest. "); break;
+            case 4: printf("Good Weather. Fine Harvest. "); break;
+            case 5: printf("Excellent Weather. Great Harvest! "); break;
+        }
+        return;
+        //return city.harvest; // change return type to int
     } // change to generate harvest string
 
     int ReleaseGrain()
@@ -456,15 +503,166 @@ public:
         printf("%d serfs born this year.\n", city.serfs.incoming);
     }
 
-    void PrintInstructions(void);
-    void PlayGame(player [], int);
-    void NewTurn(player *, int, player [], player *);
-    void BuySellGrain(player *);
-    void AdjustTax(player *);
-    void DrawMap(player *);
-    void StatePurchases(player *, int, player []);
-    void ShowStats(player [], int);
-    void ImDead(player *);
+    void BuySellGrain()
+    {
+        bool Finished;
+        char string[256];
+        Finished = false;
+        while (Finished == false)
+        {
+            printf("\nYear %d\n", year);
+            printf("\n%s %s\n\n", title.c_str(), name.c_str());
+            printf("Rats ate %d%% of your grain reserves.\n", city.rats.amount);
+            PrintGrain();
+            printf("(%d steres)\n\n", city.rats.amountEffected);
+            printf("Grain\tGrain\tPrice of\tPrice of\tTreasury\n");
+            printf("Reserve\tDemand\tGrain\t\tLand\n");
+            printf("%d\t%d\t%d\t\t%.2f\t\t%d\n", city.grain.reserve,
+                   city.grain.demand, static_cast<int>(city.grain.price), city.land.price,
+                   city.treasury.coffers);
+            printf("steres\tsteres\t1000 st.\thectare\t\tgold florins\n");
+            printf("\nYou have %d hectares of land.\n", city.land.reserve);
+            printf("\n1. Buy grain, 2. Sell grain, 3. Buy land,");
+            printf(" 4. Sell land\n(Enter q to continue): ");
+            fgets(string, 255, stdin);
+            if(string[0] == 'q')
+                Finished = true;
+            if(string[0] == '1')
+                BuyGrain();
+            if(string[0] == '2')
+                SellGrain();
+            if(string[0] == '3')
+                BuyLand();
+            if(string[0] == '4')
+                SellLand();
+        }
+    }
+
+    void AdjustTax()
+    {
+        char string[256];
+        int val = 1, duty = 0;
+        string[0] = '\0';
+        while(val != 0 || string[0] != 'q')
+        {
+            printf("\n%s %s\n\n", title.c_str(), name.c_str());
+            GenerateIncome();
+            printf("(%d%%)\t\t(%d%%)\t\t(%d%%)",
+                   city.customsDuty.rate, city.salesTax.rate,
+                   city.incomeTax.rate);
+            printf("\n1. Customs Duty, 2. Sales Tax, 3. Wealth Tax, ");
+            printf("4. Justice\n");
+            printf("Enter tax number for changes, q to continue: ");
+            fgets(string, 255, stdin);
+            val = static_cast<int>(atoi(string));
+            switch(val)
+            {
+                case 1: printf("New customs duty (0 to 100): ");
+                    fgets(string, 255, stdin);
+                    duty = static_cast<int>(atoi(string));
+                    if(duty > 100) duty = 100;
+                    if(duty < 0) duty = 0;
+                    city.customsDuty.rate = duty;
+                    break;
+                case 2: printf("New sales tax (0 to 50): ");
+                    fgets(string, 255, stdin);
+                    duty = static_cast<int>(atoi(string));
+                    if(duty > 50) duty = 50;
+                    if(duty < 0) duty = 0;
+                    city.salesTax.rate = duty;
+                    break;
+                case 3: printf("New wealth tax (0 to 25): ");
+                    fgets(string, 255, stdin);
+                    duty = static_cast<int>(atoi(string));
+                    if(duty > 25) duty = 25;
+                    if(duty < 0) duty = 0;
+                    city.incomeTax.rate = duty;
+                    break;
+                case 4: printf("Justice: 1. Very fair, 2. Moderate");
+                    printf(" 3. Harsh, 4. Outrageous: ");
+                    fgets(string, 255, stdin);
+                    duty = static_cast<int>(atoi(string));
+                    if(duty > 4) duty = 4;
+                    if(duty < 1) duty = 1;
+                    city.justice.rate = duty;
+                    break;
+                }
+            }
+
+            AddRevenue();
+            if(isBankrupt == true)
+            {
+                SeizeAssets();
+            }
+    }
+
+    // void DrawMap(); // not even implemented
+    void StatePurchases() // (player *, int, player [])
+    {
+        char string[256];
+        int val = 1;
+        string[0] = '\0';
+        while(val != 0 || string[0] != 'q')
+        {
+            printf("\n\n%s %s\nState purchases.\n", title.c_str(), name.c_str());
+            printf("\n1. Marketplace (%d)\t\t\t\t1000 florins\n",
+                   city.marketplaces.amount);
+            printf("2. Woolen mill (%d)\t\t\t\t2000 florins\n",
+                   city.mills.amount);
+            printf("3. Palace (partial) (%d)\t\t\t\t3000 florins\n",
+                   city.palaces.amount);
+            printf("4. Cathedral (partial) (%d)\t\t\t5000 florins\n",
+                   city.cathedrals.amount);
+            printf("5. Equip one platoon of serfs as soldiers\t500 florins\n");
+            printf("\nYou have %d gold florins.\n", city.treasury.coffers);
+            printf("\nTo continue, enter q. To compare standings, enter 6\n");
+            printf("Your choice: ");
+            fgets(string, 255, stdin);
+            val = static_cast<int>(atoi(string));
+            switch(val)
+            {
+                case 1: BuyMarket(); break;
+                case 2: BuyMill(); break;
+                case 3: BuyPalace(); break;
+                case 4: BuyCathedral(); break;
+                case 5: BuySoldiers(); break;
+                // case 6: ShowStats(MyPlayers, HowMany); // TODO: Determine what to do with this
+            }
+        }
+        return;
+    }
+
+    void ImDead() // player *
+    {
+        char string[256];
+        int why;
+
+        printf("\n\nVery sad news.\n%s %s has just died\n", title.c_str(),
+               name.c_str());
+
+        if(year > 1450)
+            printf("of old age after a long reign.\n");
+        else
+        {
+            why = random(8);
+            switch(why)
+            {
+                case 0:
+                case 1:
+                case 2:
+                case 3: printf("of pneumonia after a cold winter in a drafty castle.\n"); break;
+                case 4: printf("of typhoid after drinking contaminated water.\n"); break;
+                case 5: printf("in a smallpox epidemic.\n"); break;
+                case 6: printf("after being attacked by robbers while travelling.\n"); break;
+                case 7:
+                case 8: printf("of food poisoning.\n"); break;
+            }
+        }
+        isDead = true;
+        printf("\n(Press ENTER): ");
+        fgets(string, 255, stdin);
+        return;
+    }
 
     bool Won()
     {
@@ -472,9 +670,14 @@ public:
     }
 };
 /*
-
+// Game level
 int AttackNeighbor(player *, player *);
+void PlayGame(player [], int)
+void PrintInstructions(void);
+void NewTurn(player *, int, player [], player *);
+void ShowStats(); // (player [], int)
 
+// Player/City Level
 void GenerateHarvest(player *);
 void GenerateIncome(player *);
 void ChangeTitle(player *);
@@ -487,9 +690,7 @@ void SellLand(player *);
 void SerfsDecomposing(player *, float);
 void SerfsProcreating(player *, float);
 
-void PrintInstructions(void);
-void PlayGame(player [], int);
-void NewTurn(player *, int, player [], player *);
+
 void BuySellGrain(player *);
 void AdjustTax(player *);
 void DrawMap(player *);
