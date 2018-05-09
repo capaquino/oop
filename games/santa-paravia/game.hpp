@@ -45,9 +45,9 @@ public:
                 player.GenerateHarvest();
                 player.NewLandAndGrainPrices();
 
-                /*BuySellGrain(Me);
-                ReleaseGrain(Me);
-                if(Me->InvadeMe == True)
+                player.BuySellGrain();
+                player.ReleaseGrain();
+                /*if(invadeMe == True)
                 {
                     for(i = 0; i < HowMany; i++)
                         if(i != Me->WhichPlayer)
@@ -58,21 +58,17 @@ public:
                             }
                     if(i != 9)
                         AttackNeighbor(Baron, Me);
-                }
-                AdjustTax(Me);
-                DrawMap(Me);
-                StatePurchases(Me, HowMany, MyPlayers);
-                CheckNewTitle(Me);
+                }*/
+                player.AdjustTax();
+                //DrawMap(Me); // was never implemented in original, think about implementing it in port.
+                player.StatePurchases();
+                player.CheckNewTitle();
 
-                Me->Year++;
-                if(Me->Year == Me->YearOfDeath)
-                    ImDead(Me);
-                if(Me->TitleNum >= 7)
-                    Me->IWon = True;
-                */
+                player.ProgressOneYear();
+                if(player.GetCurrentYear() == player.GetYearOfDeath())
+                    player.ImDead();
 
-                bool playerWon = player.Won();
-                if (playerWon)
+                if (player.HasWon())
                 {
                     return &player - &players[0]; // returns the index
                 }

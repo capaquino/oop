@@ -1,5 +1,54 @@
 #pragma once
 
+/*
+// Game level
+int AttackNeighbor(player *, player *);
+void PlayGame(player [], int)
+void PrintInstructions(void);
+void NewTurn(player *, int, player [], player *);
+void ShowStats(); // (player [], int)
+
+// Player/City Level
+void GenerateHarvest(player *);
+void GenerateIncome(player *);
+void ChangeTitle(player *);
+void NewLandAndGrainPrices(player *);
+void PrintGrain(player *);
+int ReleaseGrain(player *);
+void SeizeAssets(player *);
+void SellGrain(player *);
+void SellLand(player *);
+void SerfsDecomposing(player *, float);
+void SerfsProcreating(player *, float);
+
+
+void BuySellGrain(player *);
+void AdjustTax(player *);
+void DrawMap(player *);
+void StatePurchases(player *, int, player []);
+void ShowStats(player [], int);
+void ImDead(player *);
+*/
+
+
+/*
+Difficulty <-- Game?
+OldTitle
+TitleNum
+WhichPlayer <-- Game?
+Year <-- Game?
+YearOfDeath
+
+boolean
+InvadeMe
+IsBankrupt
+IsDead
+IWon
+MaleOrFemale
+NewTitle
+*/
+
+
 #include <string>
 
 #include "city.hpp"
@@ -20,6 +69,7 @@ private:
     bool invadeMe;
     int year;
     bool isDead;
+    int yearOfDeath;
 
 public:
     Player(std::string n, std::string cityName) : name(n), city(City(cityName))
@@ -28,11 +78,35 @@ public:
         titleNum = 1;
         isBankrupt = false;
         difficulty = 1;
-        won = true; // change this to false
+        won = false; // change this to false
         invadeMe = false;
-        year = -1;
+        year = 1400; // 1400 is the starting year
         isDead = false;
+        oldTitle = 1;
+        yearOfDeath = year + 20 + random(35);
+
+        // additional
+        // male or female
+        // male or female title assignment
+        // city assignment
     }
+
+    int GetCurrentYear() { return year; }
+    void ProgressOneYear() { year++; }
+    int GetYearOfDeath() { return yearOfDeath; }
+    bool HasWon()
+    {
+        if (titleNum >= 7)
+        {
+            won = true;
+        }
+        else
+        {
+            won = false;
+        }
+        return won; // probably don't even need the "won" member variable.
+    }
+    ////////////////////////////////////////////////////////////////////////////
 
     int random(int upperBound)
     {
@@ -663,56 +737,4 @@ public:
         fgets(string, 255, stdin);
         return;
     }
-
-    bool Won()
-    {
-        return won;
-    }
 };
-/*
-// Game level
-int AttackNeighbor(player *, player *);
-void PlayGame(player [], int)
-void PrintInstructions(void);
-void NewTurn(player *, int, player [], player *);
-void ShowStats(); // (player [], int)
-
-// Player/City Level
-void GenerateHarvest(player *);
-void GenerateIncome(player *);
-void ChangeTitle(player *);
-void NewLandAndGrainPrices(player *);
-void PrintGrain(player *);
-int ReleaseGrain(player *);
-void SeizeAssets(player *);
-void SellGrain(player *);
-void SellLand(player *);
-void SerfsDecomposing(player *, float);
-void SerfsProcreating(player *, float);
-
-
-void BuySellGrain(player *);
-void AdjustTax(player *);
-void DrawMap(player *);
-void StatePurchases(player *, int, player []);
-void ShowStats(player [], int);
-void ImDead(player *);
-*/
-
-
-/*
-Difficulty <-- Game?
-OldTitle
-TitleNum
-WhichPlayer <-- Game?
-Year <-- Game?
-YearOfDeath
-
-boolean
-InvadeMe
-IsBankrupt
-IsDead
-IWon
-MaleOrFemale
-NewTitle
-*/
