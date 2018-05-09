@@ -40,11 +40,12 @@ public:
         {
             for (auto &player : players)
             {
-                /*
+
                 int i;
-                GenerateHarvest(Me);
-                NewLandAndGrainPrices(Me);
-                BuySellGrain(Me);
+                player.GenerateHarvest();
+                player.NewLandAndGrainPrices();
+
+                /*BuySellGrain(Me);
                 ReleaseGrain(Me);
                 if(Me->InvadeMe == True)
                 {

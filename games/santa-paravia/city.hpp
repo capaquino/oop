@@ -18,10 +18,10 @@ public:
     float publicWorks; // used for what?
 
     People clergy;
-    People serfs; // dead serfs, fleeing serfs, new serfs, transplanted serfs
+    Serfs serfs; // dead serfs, fleeing serfs, new serfs, transplanted serfs
     People merchants;
     People nobles;
-    People soldiers; // solderPay
+    Soldiers soldiers; // solderPay
 
     Revenue customsDuty; // x vs xRevenue?
     Revenue incomeTax; // ^

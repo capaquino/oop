@@ -23,8 +23,23 @@ struct People
     int population;
 };
 
+struct Serfs : People
+{
+    int incoming;
+    int dead;
+    int fleeing;
+    int transplanted;
+};
+
+struct Soldiers : People
+{
+    int upkeep;
+};
+
 struct Events
 {
+    int amount;
+    int amountEffected;
     void Occur() {}
 };
 
