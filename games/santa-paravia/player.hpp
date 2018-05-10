@@ -72,12 +72,11 @@ private:
     int yearOfDeath;
 
 public:
-    Player(std::string n, std::string cityName) : name(n), city(City(cityName))
+    Player(std::string n, std::string cityName, int diff_level) : name(n), city(City(cityName)), difficulty(diff_level)
     {
-        title = "default";
+        title = "Baron";
         titleNum = 1;
         isBankrupt = false;
-        difficulty = 1;
         won = false; // change this to false
         invadeMe = false;
         year = 1400; // 1400 is the starting year
@@ -85,12 +84,11 @@ public:
         oldTitle = 1;
         yearOfDeath = year + 20 + random(35);
 
-        // additional
-        // male or female
-        // male or female title assignment
         // city assignment
+        // Changed because we aren't using pointers
     }
 
+    // Access Functions
     int GetCurrentYear() { return year; }
     void ProgressOneYear() { year++; }
     int GetYearOfDeath() { return yearOfDeath; }
@@ -108,6 +106,7 @@ public:
     }
     ////////////////////////////////////////////////////////////////////////////
 
+    // New random function.
     int random(int upperBound)
     {
         std::srand(std::time(NULL)); // okay to do this every time?

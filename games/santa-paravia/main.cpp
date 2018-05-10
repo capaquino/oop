@@ -7,17 +7,32 @@
 
 int main(int argc, char const *argv[])
 {
+    // Introduction
+    std::cout << "Santa Paravia and Fiumaccio\n";
+
     // print instructions
-    std::cout << "Instructions..." << std::endl;
+    std::cout << "Do you wish instructions (Y or N)?\n> ";
+    std::string input;
+    getline(std::cin, input);
+    if (input.at(0) == 'y' || input.at(0) == 'Y')
+    {
+        SantaParaviaGame::PrintInstructions();
+    }
 
     // get number of players
-    std::cout << "Number of players?\n> ";
-    std::string input;
+    std::cout << "How many people want to play (1 to 6)?\n> ";
     getline(std::cin, input);
     int number_of_players;
     std::stringstream(input) >> number_of_players;
 
-    if (number_of_players > 0 && number_of_players <= 7)
+    // get game difficulty
+    std::cout << "What will be the difficulty of this game:\n1. Apprentice\n"
+                 "2. Journeyman\n3. Master\n4. Grand Master\n> ";
+    getline(std::cin, input);
+    int difficulty;
+    std::stringstream(input) >> difficulty;
+
+    if (number_of_players > 0 && number_of_players < 7)
     {
         std::vector<std::string> playerNames;
 
@@ -31,7 +46,7 @@ int main(int argc, char const *argv[])
         }
 
         // begin the game
-        auto game = SantaParaviaGame(number_of_players, playerNames);
+        auto game = SantaParaviaGame(number_of_players, playerNames, difficulty);
 
         // play the game
         int winner = game.Play();
@@ -41,7 +56,7 @@ int main(int argc, char const *argv[])
     else
     {
         std::cout << "The number of players entered is invalid. The number of "
-        "players must be between 1 and 7." << std::endl << "Exiting." << std::endl;
+        "players must be between 1 and 6." << std::endl << "Exiting." << std::endl;
         exit(1);
     }
 

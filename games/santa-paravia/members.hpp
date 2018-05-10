@@ -40,7 +40,6 @@ struct Events
 {
     int amount;
     int amountEffected;
-    void Occur() {}
 };
 
 struct Treasury
